@@ -1,1 +1,1 @@
-## [namazuworks.github.io](namazuworks.github.io)
+## [namazuworks.github.io](https://namazuworks.github.io)
