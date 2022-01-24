@@ -25,6 +25,8 @@ body {
 	font-size: 83.3%;
 	font-family: Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
 	background-image: url(img/bg-square010_6.gif), linear-gradient(to bottom right, C0E9E2, F0FAF8);
+	background-position: left top, left top;
+	background-repeat: repeat, repeat;
 }
 }
 
