@@ -9,10 +9,10 @@ html, body {
 	scrollbar-track-color: #FFF;
 	scrollbar-face-color: #FFF;
 	scrollbar-shadow-color: #FFF;
-	scrollbar-darkshadow-color: #D4D9E2;
+	scrollbar-darkshadow-color: #d9f2ee;
 	scrollbar-highlight-color: #FFF;
-	scrollbar-3dlight-color: #D4D9E2;
-	scrollbar-arrow-color: #C0C6DD;
+	scrollbar-3dlight-color: #d9f2ee;
+	scrollbar-arrow-color: #C0E9E2;
 }
 
 html {
@@ -23,7 +23,7 @@ body {
 	line-height: 1.6;
 	color: #888;
 	font-size: 83.3%;
-	font-family: Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
+	font-family: Verdana, Osaka, Sans-Serif;
 	background: url(bg-stripe008.gif) left top repeat, linear-gradient(#E1F4F1, #F0FAF8) left top repeat;
 }
 
@@ -40,12 +40,12 @@ a:visited {
 }
 
 a:hover {
-	color: #9EE8B5;
+	color: #e97c7c;
 	text-decoration: underline;
 }
 
 a:active {
-	color: #5AA0E1;
+	color: #e97c7c;
 }
 
 h1, h2 {
@@ -56,12 +56,11 @@ h1 {
 	color: #FFF;
 	font-size: 250%;
 	font-family: "Century Gothic", "Lucida Sans Unicode", Tahoma, Arial, Sans-Serif;
+	text-shadow: 1px 1px 5px #63837e
 }
-	h1 a:link {color: #FFF;}
-	h1 a:visited {color: #FFF;}
 
 h2 {
-	color: #86BEF2;
+	color: #EFA1A1;
 	font-size: 77%;
 	font-weight: normal;
 }
@@ -71,7 +70,8 @@ h3 {
 	color: #999;
 	font-size: 100%;
 	font-family: Arial, Helvetica, sans-serif;
-	background: url(stripe022.gif) 0% 25%;
+	background: #e3e8e7;
+	 border-radius: 3px;
 }
 
 h4, h5, h6 {
@@ -201,6 +201,8 @@ input.button {
 div#out {
 	margin: 20px auto 0 auto;
 	width: 770px;
+	background-color: rgba(255, 255, 255, 0.4);
+	border-radius: 5px;
 }
 
 div#header {
@@ -324,7 +326,7 @@ div#menu li a {
 
 div#menu li a:hover {
 	border-bottom: 1px solid #FFF;
-	color: #5AA0E1;
+	color: #e97c7c;
 	text-decoration: none;
 }
 
