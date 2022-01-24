@@ -24,10 +24,7 @@ body {
 	color: #888;
 	font-size: 83.3%;
 	font-family: Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
-	background-image: url(img/bg-square010_6.gif), linear-gradient(to bottom right, C0E9E2, F0FAF8);
-	background-position: left top, left top;
-	background-repeat: repeat, repeat;
-}
+	background: url(bg-stripe008.gif) left top repeat, linear-gradient(#E1F4F1, #F0FAF8) left top repeat;
 }
 
 a {
@@ -35,15 +32,15 @@ a {
 }
 
 a:link {
-	color: #86BEF2;
+	color: #FDB3AF;
 }
 
 a:visited {
-	color: #86BEF2;
+	color: #EFA1A1;
 }
 
 a:hover {
-	color: #5AA0E1;
+	color: #9EE8B5;
 	text-decoration: underline;
 }
 
