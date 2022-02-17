@@ -72,6 +72,7 @@ h3 {
 	font-family: Arial, Helvetica, sans-serif;
 	background: #cfe2db;
 	 border-radius: 3px;
+	margin: 0 0 1em 0;
 }
 
 h4, h5, h6 {
@@ -127,6 +128,8 @@ address, cite {
 
 code {
 	font-family: monospace;
+	font-size: 125%;
+	font-weight: bold;
 }
 
 table {
@@ -350,4 +353,21 @@ div#footer li {
 	margin: 50px auto 0 auto;
 	padding: 0 0 0 30px;
 	width: 60%;
+}
+
+#toc_container {
+	background: #eafaf7 none repeat scroll 0 0;
+	border: 1px solid #aaa;
+	display: table;
+	font-size: 85%;
+	padding: 4px;
+	width: auto;
+	margin: 0 0 1em 0;
+}
+.toc_title {
+	font-weight: 700;
+	text-align: center;
+}
+#toc_container li, #toc_container ul, #toc_container ul li{
+	list-style: outside none none !important;
 }

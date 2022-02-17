@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="content-style-type" content="text/css">
+<title>namazuworks | How to configure a Delta-style English oto.ini</title>
+<link rel="stylesheet" type="text/css" href="img/style.css">
+</head>
+<body id="PAGETOP">
+
+<!-- out開始 -->
+<div id="out">
+
+<!-- header開始 -->
+<div id="header">
+
+	<!-- ============ ▼サイト名　ここから ============ -->
+
+	<h1>namazuworks</h1>
+
+	<!-- ============ ▲サイト名　ここまで ============ -->
+
+
+	<!-- ============ ▼サブタイトルなど　ここから ============ -->
+
+	<h2>since 2022</h2>
+
+	<!-- ============ ▲サブタイトルなど　ここまで ============ -->
+
+</div>
+<!-- header終了 -->
+
+
+<!-- ============ ▼メインカラム　ここから ============ -->
+
+<div id="main_column">
+
+	<!-- ============ ▼コンテンツ　ここから ============ -->
+
+	<h3>How to configure a Delta-style English oto.ini</h3>
+
+		<div class="write">
+
+			<!-- ============ ▼本文　ここから ============ -->
+
+				<p>This is based on Delta&#39;s <a href="https://delta-kimigatame.hatenablog.jp/entry/ar761114">official guide</a> for configuring Delta-style English banks. It will cover how to create a base oto and how to properly configure each alias. While not a direct translation of the original, all the information should be correct.</p>
+				<p>This guide assumes you already know how to oto Japanese CVVC. A good otoing guide can be found <a href="https://yinsototutorial.weebly.com/">here</a> if needed.</p>
+				<p>The information provided here will also work for otoing voicebanks using <a href="https://www.youtube.com/watch?v=AJ2ScYGndRw">Peiton Macaron&#39;s reclist</a>, as it&#39;s derived from Delta EN. However, in that case, a base oto is already provided.</p>
+				<p>This guide was assembled by <a href="https://twitter.com/amalgamidol">PSP</a>, and cannot be reprinted without permission. Please link to this page instead.</p>
+				<div id="toc_container">
+					<p class="toc_title">Contents</p>
+					<ul class="toc_list">
+						<li><a href="#necessary-tools">Necessary tools</a>
+						<li><a href="#creating-a-base-oto">Creating a base oto</a>
+						<li><a href="#configuring-cv-ccv-diphthongs">Configuring CV/CCV + diphthongs</a>
+						<li><a href="#configuring-vc-vvc-diphthongs">Configuring VC/VVC + diphthongs</a>
+						<li><a href="#configuring-v-c-vv-c-v-cc-">Configuring V C-, VV C-, V CC-</a>
+						<li><a href="configuring-onset-consonant-clusters">Configuring onset consonant clusters</a>
+							<ol>
+								<li><a href="#two-consonants-second-plosive">Two consonants (when the second consonant is a plosive)</a>
+								<li><a href="#two-consonants-second-not-plosive">Two consonants (when the second consonant is not a plosive)</a>
+								<li><a href="#three-consonants">Three consonants</a>
+							</ol>
+						<li><a href="#configuring-onset-ccv">Configuring onset CCV</a>
+						<li><a href="#configuring-coda-consonant-clusters">Configuring coda consonant clusters</a>
+					</ul>
+				</div>
+			<h3 id="necessary-tools">Necessary tools</h3>
+				<p>Download &quot;doub_alias&quot; and &quot;mkototemp&quot; <a href="https://delta-kimigatame.hatenablog.jp/entry/ar591802">here</a>, under the <code>補助ツール</code> section.</p>
+				
+			<h3 id="creating-a-base-oto">Creating a base oto</h3>
+				<p>Download the Delta reclist <a href="https://tl.tubs.wtf/2020/11/09/delta-eng">here</a> (Click &quot;Number #&quot; for your preferred reclist)<br>The zip will come with <code>mkototemp.ini</code>, <code>dubalias.ini</code>, and <code>presamp.ini</code> files.
+				<br>↓
+				<br>Record samples
+				<br>↓
+				<br>Put the <code>mkototemp.ini</code> file from the reclist zip next to <code>mkototemp.exe</code>.<br>Modify the <b>[TEMPO]</b> and <b>[OFFSET]</b> parameters in <code>mkototemp.ini</code> to match your recordings. <b>[OFFSET]</b> is measured in milliseconds. Drag and drop the reclist you recorded with onto mkototemp.exe.</p>
+				<p><b>It is important to note that</b> depending on the reclist, you may need to create &quot;h-&quot; aliases by hand. For example, if you input the lyrics [ask][him], the sound will drop because there is no alias for [k hi] in the base oto. Everything else should be fine.
+				<br>↓
+				<br>Base oto is created
+				<br>↓
+				<br>Put the <code>dubalias.ini</code> file from the reclist zip next to <code>dubalias.exe</code>. Drag and drop the oto.ini onto <code>dubalias.exe</code>. (This step is similar to setparam&#39;s option &quot;Substitute お for を if not recorded&quot;.)</p>
+				<p>The specific duplicated aliases are:</p>
+				<ul>
+				<li><code>3 [C]</code>→<code>r [C]</code></li>
+				<li>Makes <code>E</code> synonymous with <code>e</code></li>
+				<li>Makes CVs with <code>oU</code> in them synonymous with <code>o</code></li>
+				<li>Makes CVs with <code>aI</code> or <code>aU</code> in them synonymous with <code>a</code></li>
+				</ul>
+				
+			<h3 id="configuring-cv-ccv-diphthongs">Configuring CV/CCV + diphthongs</h3>
+				<p>[CV] and [- CV] are configured the same as in Japanese CVVC.<br>However, diphthongs (eI, aI, aU, OI, oU) need to be handled a bit differently.</p>
+				<p><img src="https://raw.githubusercontent.com/namazuworks/namazuworks.github.io/main/img/deltaguide/seI.png" alt="seI">
+				<br><code>[seI]</code></p>
+				<p><b>Left blank:</b> Start of consonant sound (same as CV)
+				<br><b>Overlap:</b> ⅓ of the preutterance (same as CV)
+				<br><b>Preutterance:</b> Start of the vowel sound (same as CV)
+				<br><b>Consonant:</b> Up until the vowel is stable (same as CV)
+				<br><b>Right blank:</b> Placed before the second vowel sound begins</p>
+				<p>For example, when configuring <code>seI</code>, you should only hear <code>se</code>.<br><b>If you can hear the <code>I</code> sound, it&#39;s been configured incorrectly.</b></p>
+				<p>Because of this, when a phrase ends with a diphthong, like [seI], the <code>I</code> sound will be missing.<br>Therefore, be sure to use the proper ending sound, like [seI][eI-].</p>
+				
+			<h3 id="configuring-vc-vvc-diphthongs">Configuring VC/VVC + diphthongs</h3>
+				<p>[VC]s are configured the same as in Japanese CVVC.<br>However, diphthongs (eI, aI, aU, OI, oU) need to be handled a bit differently.</p>
+				<p><img src="https://raw.githubusercontent.com/namazuworks/namazuworks.github.io/main/img/deltaguide/eI%20s.png" alt="eI s">
+				<br><code>[eI s]</code></p>
+				<p><b>Left blank:</b> Where the first vowel sound is stable
+				<br><b>Overlap:</b> Where the first vowel sound is stable
+				<br><b>Preutterance:</b> Start of the consonant sound (same as VC). Ideally should be 3× the overlap value
+				<br><b>Consonant:</b> Where the consonant is stable (same as VC)
+				<br><b>Right blank:</b> Where the consonant is stable (same as VC)
+				<br>The first vowel (<code>e</code> here) should be <b>surrounded by the left blank and overlap.</b></p>
+				
+			<h3 id="configuring-v-c-vv-c-v-cc-">Configuring V C-, VV C-, V CC-</h3>
+				<p>Used in phrases that end with a consonant.</p>
+				<p><img src="https://raw.githubusercontent.com/namazuworks/namazuworks.github.io/main/img/deltaguide/E%20s-.png" alt="E s-">
+				<br><code>[E s-]</code></p>
+				<p><img src="https://raw.githubusercontent.com/namazuworks/namazuworks.github.io/main/img/deltaguide/eI%20s-.png" alt="eI s-">
+				<br><code>[eI s-]</code></p>
+				<p>The <b>left blank</b>, <b>overlap</b>, and <b>preutterance</b> are handled the same as VC/VVC.
+				<br><b>Consonant:</b> Immediately after the last consonant sound
+				<br><b>Right blank:</b> Silence</p>
+				<p>By the way, the area referenced by presamp is the length between the preutterance and the consonant.<br>(T/N: Not sure what this means here, since I&#39;m still learning Delta ENG and how it works with presamp)</p>
+				
+			<h3 id="configuring-onset-consonant-clusters">Configuring onset consonant clusters</h3>
+				<p>Onset consonant clusters are 2~3 consonants at the start of a word (i.e. &quot;st&quot; in star, &quot;spr&quot; in spring).</p>
+				<p>Since recording [CCV] and [CCCV] samples makes the reclist very, very long, Delta reclist #2 and beyond uses [- CC] and [CC] aliases instead.</p>
+				
+				<h4 id="two-consonants-second-plosive">Two consonants (when the second consonant is a plosive)</h4>
+					<p><img src="https://raw.githubusercontent.com/namazuworks/namazuworks.github.io/main/img/deltaguide/s%20t.png" alt="s t">
+					<br><code>[s t]</code></p>
+					<p><b>Left blank:</b> Start of the <code>s</code> sound
+					<br><b>Overlap:</b> ⅓ of the preutterance (Same as <code>s</code> CVs like [si] or [seI])
+					<br><b>Preutterance:</b> Start of silence
+					<br><b>Consonant:</b> Somewhere in silence  (Same as <code>t</code> VCs like [E t] or [oU t])
+					<br><b>Right blank:</b> Somewhere in silence (Same as <code>t</code> VCs)</p>
+					
+				<h4 id="two-consonants-second-not-plosive">Two consonants (when the second consonant is not a plosive)</h4>
+					<p><img src="https://raw.githubusercontent.com/namazuworks/namazuworks.github.io/main/img/deltaguide/s%20m.png" alt="s m">
+					<br><code>[s m]</code></p>
+					<p><b>Left blank:</b> Start of the <code>s</code> sound
+					<b>Overlap:</b> ⅓ of the preutterance (Same as <code>s</code> CVs like [si] or [seI])
+					<b>Preutterance:</b> Start of the <code>m</code> sound
+					<b>Consonant:</b> Stable part of the <code>m</code> sound (Same as <code>m</code> VCs like [E m] or [oU m])
+					<b>Right blank:</b> Stable part of the <code>m</code> sound  (Same as <code>m</code> VCs)</p>
+					
+				<h4 id="three-consonants">Three consonants</h4>
+					<p><img src="https://raw.githubusercontent.com/namazuworks/namazuworks.github.io/main/img/deltaguide/stw.png" alt="stw">
+					<br><code>[stw]</code></p>
+					<p><b>Left blank:</b> Start of the <code>s</code> sound
+					<br><b>Overlap:</b> ⅓ of the preutterance (Same as <code>s</code> CVs like [si] or [seI])
+					<br><b>Preutterance:</b> Start of the <code>w</code> sound
+					<br><b>Consonant:</b> Stable part of the <code>w</code> sound (Same as <code>w</code> VCs like [E w] or [oU w])
+					<br><b>Right blank:</b> Right before the vowel starts (Same as <code>w</code> VCs)</p>
+					
+			<h3 id="configuring-onset-ccv">Configuring onset CCV</h3>
+				<p>How to configure onset consonant clusters like [CCV] and [CCCV].<br>These are only used when configuring banks recorded with Delta English lists #1 or #0.</p>
+				<p><img src="https://raw.githubusercontent.com/namazuworks/namazuworks.github.io/main/img/deltaguide/stw@.png" alt="stw@">
+				<br><code>[stw@]</code></p>
+				<p><b>Left blank:</b> Start of the first consonant
+				<br><b>Overlap:</b> Stable part of the first consonant
+				<br><b>Preutterance:</b> Start of the vowel
+				<br><b>Consonant:</b> Stable part of the vowel
+				<br><b>Right blank:</b> Stable part of the vowel
+				<br>The gap between the overlap and the preutterance will likely be larger than usual, but it may be better to keep the overlap to ⅓ of the first consonant.</p>
+				
+			<h3 id="configuring-coda-consonant-clusters">Configuring coda consonant clusters</h3>
+				<p>Coda consonant clusters are a string of consonants at the end of a word (i.e. &quot;rm&quot; in arm,  &quot;dnt&quot; in didn&#39;t, &quot;skt&quot; in asked)<br>Since recording [V CC-] and [V CCC-] samples makes the reclist double in length, Delta reclist #1 and beyond uses [C C-] and [C CC-] aliases instead.<br>For list #0, [V CC-] and [V CCC-] are configured the same way as [VC].</p>
+				<p><img src="https://raw.githubusercontent.com/namazuworks/namazuworks.github.io/main/img/deltaguide/s%20k-.png" alt="s k-">
+					<br><code>[s k-]</code></p>
+					<p><b>Left blank, overlap:</b> Surround the steady part of the <code>s</code> sound
+					<br><b>Preutterance:</b> Start of the second consonant
+					<br><b>Consonant, right blank:</b> Surround silence</p>
+				<p><img src="https://raw.githubusercontent.com/namazuworks/namazuworks.github.io/main/img/deltaguide/z%20m-.png" alt="z m-">
+					<br><code>[z m-]</code></p>
+					<p><b>Left blank, overlap:</b> Surround the steady part of the <code>z</code> sound
+					<br><b>Preutterance:</b> Start of the second consonant
+					<br><b>Consonant, right blank:</b> Surround silence</p>
+				<p><img src="https://raw.githubusercontent.com/namazuworks/namazuworks.github.io/main/img/deltaguide/z%20nt-.png" alt="z nt-">
+					<code>[z nt-]</code></p>
+					<p><b>Left blank, overlap:</b> Surround the steady part of the <code>z</code> sound
+					<br><b>Preutterance:</b> Start of the second consonant
+					<br><b>Consonant, right blank:</b> Surround silence</p>
+
+			<!-- ============ ▲本文　ここまで ============ -->
+
+		</div><!-- /write -->
+</div><!-- /main_column -->
+
+<!-- ============ ▲メインカラム　ここまで ============ -->
+
+
+
+<!-- ============ ▼サイドバー　ここから ============ -->
+
+<div id="sidebar">
+
+	<!-- menu開始 -->
+	<div id="menu">
+		<ul>
+			<!-- ============ ▼メニュー　ここから ============ -->
+
+			<li><a href="guide.html">Resources</a></li>
+
+			<!-- ============ ▲メニュー　ここまで ============ -->
+		</ul>
+	</div>
+	<!-- menu終了 -->
+
+
+		<p>
+			<!-- ============ ▼カウンタなど　ここから ============ -->
+				<script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=38026811&main=1"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=38026811&main=1" /></noscript>
+			<!-- ============ ▲カウンタなど　ここまで ============ -->
+
+</div><!-- /sidebar -->
+
+<!-- ============ ▲サイドバー　ここまで ============ -->
+
+
+<!-- footer開始 -->
+<div id="footer">
+		<ul>
+			<li><a href="#PAGETOP" title="Go to top of page">Pagetop</a></li>
+			<li><a href="index.html" title="Go back to homepage">Index</a></li>
+		</ul>
+
+		<div id="copy"><a href="http://neo-himeism.net/" target="_blank" title="Template by NEO HIMEISM">Template by NEO HIMEISM</a></div>
+</div>
+<!-- footer終了 -->
+
+
+</div>
+<!--out終了-->
+
+</body>
+</html>
