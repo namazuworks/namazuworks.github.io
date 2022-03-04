@@ -1,5 +1,7 @@
 /*---- NF070 -----*/
 
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
@@ -21,10 +23,10 @@ html {
 
 body {
 	line-height: 1.6;
-	color: #888;
+	color: #333;
 	font-size: 83.3%;
-	font-family: Verdana, Osaka, Sans-Serif;
-	background: url(bg-stripe008.gif) left top repeat, linear-gradient(#D2EFEA, #F0FAF8) left top repeat;
+	font-family: MS Gothic, Osaka, Sans-Serif;
+	background: url(bg-stripe008.gif) left top repeat, #5DCBA8;
 }
 
 a {
@@ -32,20 +34,20 @@ a {
 }
 
 a:link {
-	color: #f98a86;
+	color: #F17B8C;
 }
 
 a:visited {
-	color: #EFA1A1;
+	color: #B55563;
 }
 
 a:hover {
-	color: #e97c7c;
+	color: #F17B8C;
 	text-decoration: underline;
 }
 
 a:active {
-	color: #e97c7c;
+	color: #F17B8C;
 }
 
 h1, h2 {
@@ -55,7 +57,7 @@ h1, h2 {
 h1 {
 	color: #FFF;
 	font-size: 250%;
-	font-family: "Century Gothic", "Lucida Sans Unicode", Tahoma, Arial, Sans-Serif;
+	font-family: 'Didact Gothic', sans-serif;
 	text-shadow: 1px 1px 5px #4f635d
 }
 
@@ -69,7 +71,7 @@ h3 {
 	padding-left: 15px;
 	color: #476b5c;
 	font-size: 100%;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: MS Gothic, Osaka, Sans-Serif;
 	background: #cfe2db;
 	 border-radius: 3px;
 	margin: 0 0 1em 0;
@@ -127,8 +129,7 @@ address, cite {
 }
 
 code {
-	font-family: monospace;
-	font-size: 125%;
+	font-family: MS Gothic, monospace;
 	font-weight: bold;
 }
 
@@ -175,6 +176,10 @@ img {
 		background: #FFF;
 	}
 
+	div.write img {
+	    max-width: 700px;
+    }
+
 blockquote {
 	margin: 0 0 1em 30px;
 	padding: 5px 10px;
@@ -204,7 +209,7 @@ input.button {
 div#out {
 	margin: 20px auto 0 auto;
 	width: 770px;
-	background-color: rgba(255, 255, 255, 0.4);
+	background-color: rgba(255, 255, 255, 0.8);
 	border-radius: 5px;
 }
 
@@ -250,6 +255,10 @@ div.write ul, div.write ol {
 
 div.write ul li {
 	list-style: circle inside;
+}
+
+div.write ol {
+	margin-bottom: 0;
 }
 
 div.write ol li {
