@@ -45,8 +45,8 @@
 			<!-- ============ ▼本文　ここから ============ -->
 
 				<p>This is based on Delta&#39;s <a href="https://delta-kimigatame.hatenablog.jp/entry/ar761114">official guide</a> for configuring Delta-style English banks. It will cover how to create a base oto and how to properly configure each alias. While not a direct translation of the original, all the information should be correct. If you're familiar with Delta ENG and notice issues, let me know.</p>
-				<p>This guide assumes you already know how to oto Japanese CVVC. A good otoing guide can be found <a href="https://yinsototutorial.weebly.com/">here</a> if needed. Delta's "official" CVVC oto guide can be found <a href="https://delta-kimigatame.hatenablog.jp/entry/ar533241">here</a>.</p>
-				<p>The information provided here will also work for otoing voicebanks using <a href="https://www.youtube.com/watch?v=AJ2ScYGndRw">Peiton Macaron&#39;s reclist</a>, as it&#39;s derived from Delta EN. However, in that case, a base oto is already provided.</p>
+				<p>This guide assumes you already know how to oto Japanese CVVC. Delta's "official" CVVC oto guide can be found <a href="https://delta-kimigatame.hatenablog.jp/entry/ar533241">here</a> (in English); you might want to read it even if you can oto CVVC.</p>
+				<p>The information provided here will also give some insight on otoing voicebanks using <a href="https://www.youtube.com/watch?v=AJ2ScYGndRw">Peiton Macaron&#39;s reclist</a>, as it&#39;s derived from Delta EN, but you will probably get more relevant information looking at VCCV or ARPASING guides (this does not explain how to oto [- C]/[C -] aliases or other things added to Peiton English).</p>
 				<p>This guide was assembled by <a href="https://twitter.com/amalgamidol">PSP</a>, and cannot be reprinted without permission. Please link to this page instead.</p>
 				<div id="toc_container">
 					<p class="toc_title">Contents</p>
@@ -72,16 +72,16 @@
 			<h3 id="creating-a-base-oto">Creating a base oto</h3>
 				<p>Download the Delta reclist <a href="https://tl.tubs.wtf/2020/11/09/delta-eng">here</a> (Click &quot;Number #&quot; for your preferred reclist)<br>The zip will come with <code>mkototemp.ini</code>, <code>dubalias.ini</code>, and <code>presamp.ini</code> files.
 				<br>↓
-				<br>Record samples
+				<br>Record samples (I recommend using a 4-beat BGM like <a href="https://utaforum.net/resources/salems-simple-guide-bgms.481/">Salem</a>'s or the VCCV English one)
 				<br>↓
 				<br>Put the <code>mkototemp.ini</code> file from the reclist zip next to <code>mkototemp.exe</code>.<br>Modify the <b>[TEMPO]</b> and <b>[OFFSET]</b> parameters in <code>mkototemp.ini</code> to match your recordings. <b>[OFFSET]</b> is measured in milliseconds. Drag and drop the reclist you recorded with onto mkototemp.exe.</p>
 				<p><b>It is important to note that</b> depending on the reclist, you may need to create &quot;h-&quot; aliases by hand. 
 					For example, if you input the lyrics [ask][him], the sound will drop because there is no alias for [k hi] in the oto. 
-					Everything else should be fine. (T/N: I think this is referring to how presamp can handle most of the work of creating Delta English USTs, and not a change that needs to be made in the oto itself, but I'm not sure)
+					Everything else should be fine. (Personal testing: when recording List #3 i had to create most [V h-] aliases by hand while otoing. It should be obvious if things are missing.)
 				<br>↓
 				<br>Base oto is created
 				<br>↓
-				<br>Put the <code>dubalias.ini</code> file from the reclist zip next to <code>dubalias.exe</code>. Drag and drop the oto.ini onto <code>dubalias.exe</code>. (This step is similar to setparam&#39;s option &quot;Substitute お for を if not recorded&quot;.)</p>
+				<br>Put the <code>dubalias.ini</code> file from the reclist zip next to <code>dubalias.exe</code>. Drag and drop the generated oto.ini onto <code>dubalias.exe</code>. (This step is similar to setparam&#39;s option &quot;Substitute お for を if not recorded&quot;.)</p>
 				<p>The specific duplicated aliases are:</p>
 				<ul>
 				<li><code>3 [C]</code>→<code>r [C]</code></li>
@@ -89,7 +89,9 @@
 				<li>Makes CVs with <code>oU</code> in them synonymous with <code>o</code></li>
 				<li>Makes CVs with <code>aI</code> or <code>aU</code> in them synonymous with <code>a</code></li>
 				</ul>
-				
+				<p>(After personal testing, it might be best to use dubalias after otoing the base list, and then checking the new aliases to see if any changes should be made. Either will be fine, though.)
+				<br>(Also, if you recorded a list that has VV strings in it, <b>make sure to</b> oto the diphthongs as instructed below.</p>
+			
 			<h3 id="configuring-cv-ccv-diphthongs">Configuring CV/CCV + diphthongs</h3>
 				<p>[CV] and [- CV] are configured the same as in Japanese CVVC.<br>However, diphthongs (eI, aI, aU, OI, oU) need to be handled a bit differently.</p>
 				<p><img src="https://raw.githubusercontent.com/namazuworks/namazuworks.github.io/main/img/deltaguide/seI.png" alt="seI">
